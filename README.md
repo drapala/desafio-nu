@@ -15,14 +15,14 @@ O sistema de autorização de transações verifica várias condições antes de
 
 ## Tecnologias Utilizadas
 
-- Java 11
+- Java 21
 - Maven para gerenciamento de dependências
 
 ## Instalação
 
 ### Pré-requisitos
 
-- Java JDK 11 ou superior
+- Java JDK 21 ou superior
 - Maven 3.6.3 ou superior
 
 ### Configuração
