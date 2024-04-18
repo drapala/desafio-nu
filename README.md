@@ -59,7 +59,7 @@ Result result = Authorizer.authorize(transaction, account);
 System.out.println(result);
 ```
 Se tudo ocorrer corretamente, você deve ter o seguinte output:
-```python
+```bash
 Test Case: Successful domain.Transaction
 domain.Account: account = {
   active: true,
