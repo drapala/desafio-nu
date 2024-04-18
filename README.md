@@ -1,4 +1,3 @@
-```markdown
 # Projeto de Autorização de Transações
 
 Este projeto implementa um sistema de autorização de transações financeiras, garantindo que todas as operações sejam validadas conforme regras de negócio pré-definidas. É projetado para ser robusto, seguro e fácil de integrar com sistemas existentes.
