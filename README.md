@@ -58,3 +58,72 @@ Account account = new Account(true, new BigDecimal("500.00"), new ArrayList<>())
 Result result = Authorizer.authorize(transaction, account);
 System.out.println(result);
 ```
+Se tudo ocorrer corretamente, você deve ter o seguinte output:
+```python
+Test Case: Successful domain.Transaction
+domain.Account: account = {
+  active: true,
+  availableLimit: 50.00,
+  history: [
+    {amount: 50.00, merchant: "Burger King", time: 1713450995999}
+  ]
+}
+Violations: []
+
+Test Case: Insufficient Limit
+domain.Account: account = {
+  active: true,
+  availableLimit: 100.00,
+  history: [
+
+  ]
+}
+Violations: [first-transaction-above-threshold, insufficient-limit]
+
+Test Case: Inactive domain.Account
+domain.Account: account = {
+  active: false,
+  availableLimit: 100.00,
+  history: [
+
+  ]
+}
+Violations: [account-not-active]
+
+Test Case: First domain.Transaction Above Threshold
+domain.Account: account = {
+  active: true,
+  availableLimit: 100.00,
+  history: [
+
+  ]
+}
+Violations: [first-transaction-above-threshold]
+
+Test Case: High Frequency Small Interval
+domain.Account: account = {
+  active: true,
+  availableLimit: 100.00,
+  history: [
+    {amount: 10.00, merchant: "Burger King", time: 1713450996021},
+    {amount: 20.00, merchant: "Burger King", time: 1713450936021},
+    {amount: 30.00, merchant: "Burger King", time: 1713450906021},
+    {amount: 40.00, merchant: "Burger King", time: 1713450876021}
+  ]
+}
+Violations: [high-frequency-small-interval]
+
+Test Case: Doubled domain.Transaction
+domain.Account: account = {
+  active: true,
+  availableLimit: 100.00,
+  history: [
+    {amount: 50.00, merchant: "Burger King", time: 1713450936021},
+    {amount: 50.00, merchant: "Burger King", time: 1713450906021}
+  ]
+}
+Violations: [doubled-transaction]
+
+
+Process finished with exit code 0
+```
