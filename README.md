@@ -1,5 +1,3 @@
-Para criar um `README.md` bem documentado para seu projeto de autorização de transações, é essencial incluir informações claras sobre o propósito do projeto, como configurá-lo, como usá-lo, e detalhes sobre contribuições e licença. Aqui está um exemplo de como você pode estruturar o `README.md`:
-
 ```markdown
 # Projeto de Autorização de Transações
 
